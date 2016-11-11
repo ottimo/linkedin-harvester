@@ -1,3 +1,13 @@
+PATH
+  remote: .
+  specs:
+    linkedin-harvester (0.1.0)
+      nokogiri
+      phantomjs
+      selenium-webdriver (~> 2.53.4)
+      thor
+      watir
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -5,6 +15,7 @@ GEM
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.1)
     commonwatir (4.0.0)
+    diff-lcs (1.2.5)
     ffi (1.9.14)
     method_source (0.8.2)
     mini_portile2 (2.1.0)
@@ -15,6 +26,20 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    rake (10.5.0)
+    rspec (3.5.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+    rspec-core (3.5.4)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
     rubyzip (1.2.0)
     selenium-webdriver (2.53.4)
       childprocess (~> 0.5)
@@ -25,7 +50,7 @@ GEM
     watir (5.0.0)
       commonwatir (~> 4)
       watir-webdriver
-    watir-webdriver (0.9.3)
+    watir-webdriver (0.9.9)
       selenium-webdriver (>= 2.46.2)
     websocket (1.2.3)
 
@@ -33,13 +58,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  nokogiri
-  phantomjs
+  bundler (~> 1.13)
+  linkedin-harvester!
   pry
-  selenium-webdriver (= 2.53.4)
-  thor
-  watir
-  watir-webdriver
+  rake (~> 10.0)
+  rspec (~> 3.0)
 
 BUNDLED WITH
    1.13.6
