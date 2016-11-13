@@ -6,7 +6,7 @@ require 'csv'
 
 module Linkedin
   module Harvester
-    def self run
+    def self.run
       company = "search company"
       email = "your email"
       #password = ""
