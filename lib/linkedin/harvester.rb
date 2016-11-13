@@ -3,6 +3,7 @@ require 'watir-webdriver'
 require 'pry'
 require 'nokogiri'
 require 'csv'
+require 'io/console'
 
 module Linkedin
   module Harvester
