@@ -1,5 +1,31 @@
 #!/usr/bin/env ruby
 
 require 'linkedin/harvester'
+require 'optparse'
 
-Linkedin::Harvester.run
+options = {}
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: linkedin-harvester [options]"
+
+  opts.on("-u", "--user EMAIL", String, "Email account on linkedin") do |u|
+    options[:email] = u
+  end
+  opts.on("-q", "--query STRING", String, "Query string to search") do |q|
+    options[:qeury] = q
+  end
+  opts.on("-p", "--password PASSWORD", String, "Linkedin password") do |p|
+    options[:password] = p
+  end
+  opts.on("-v", "--[no-]verbose", "Run verbosely") do |v|
+    options[:verbose] = v
+  end
+  opts.on("-h", "--help", "Prints this help") do
+    puts opts
+    exit
+  end
+end.parse!
+
+p options
+
+Linkedin::Harvester::Base.new(options).run!
