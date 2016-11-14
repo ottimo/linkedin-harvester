@@ -53,16 +53,19 @@ module Linkedin::Harvester
         lis = ol.xpath("//li[contains(@class, 'people')]")
         lis.each do |lihtml|
           name = nil
+          link = nil
           role = nil
           work_key = nil
           work = nil
           li = Nokogiri::HTML(lihtml.inner_html)
           name = li.xpath("//h3/a").text
+          link = li.xpath("//h3/a").map{|link| link['href'] }
           role = li.xpath("//div[contains(@class, 'description')]").text
           work_key = li.xpath("//dl[contains(@class, 'snippet')]/dt").text
           work = li.xpath("//dl[contains(@class, 'snippet')]/dd").text
           employees << {
             name: name.to_s,
+            link: link.to_s,
             role: role.to_s,
             snippet_key: work_key.to_s,
             snippet_value: work.to_s

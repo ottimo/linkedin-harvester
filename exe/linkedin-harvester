@@ -12,7 +12,7 @@ OptionParser.new do |opts|
     options[:email] = u
   end
   opts.on("-q", "--query STRING", String, "Query string to search") do |q|
-    options[:qeury] = q
+    options[:query] = q
   end
   opts.on("-p", "--password PASSWORD", String, "Linkedin password") do |p|
     options[:password] = p
